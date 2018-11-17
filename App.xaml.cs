@@ -15,7 +15,7 @@ namespace WpfApp2
     {
         public App()
         {
-            FRAttendance.Common.FaceRecognitionConnection = @"C:\Users\Ashish Sam\Documents\FRDB";
+            //FRAttendance.Common.FaceRecognitionConnection = @"C:\Users\Ashish Sam\Documents\FRDB";
             FRAttendance.Common.Init();
         }
     }

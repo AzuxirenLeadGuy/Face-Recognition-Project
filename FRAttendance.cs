@@ -1,6 +1,7 @@
 ﻿using System;
 using FaceRecognitionDotNet;
 using System.Linq;
+
 namespace FRAttendance
 {
     public static class Common

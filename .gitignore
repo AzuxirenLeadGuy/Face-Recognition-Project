@@ -22,7 +22,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-#App.XML
+##App.XML
+
 App.xaml
 App.xaml.cs
 
