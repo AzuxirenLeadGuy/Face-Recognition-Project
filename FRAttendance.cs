@@ -6,7 +6,7 @@ namespace FRAttendance
     public static class Common
     {
         public static FaceRecognition fr;
-        public static string FaceRecognitionConnection= @"C:\FRDB";
+        public static string FaceRecognitionConnection= @"C:\FRDB ";
         public static string StudentDatabaseConnection;
         public static void Init(){fr=FaceRecognition.Create(FaceRecognitionConnection);}
     } 
