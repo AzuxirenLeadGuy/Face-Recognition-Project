@@ -22,10 +22,9 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-##App.XML
+##Loading DB Folder
 
-App.xaml
-App.xaml.cs
+FolderLoad.cs
 
 
 # Visual Studio 2015 cache/options directory
