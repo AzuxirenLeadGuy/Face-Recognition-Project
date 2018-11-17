@@ -1,0 +1,25 @@
+﻿<Page x:Class="WpfApp2.Attendance"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Attendance">
+
+    <Grid RenderTransformOrigin="0.485,0.479" Background="#FF1623AA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Image1" HorizontalAlignment="Center" Height="189" VerticalAlignment="Top" Width="354" RenderTransformOrigin="0.492,0.541" Margin="26,24,420,0"/>
+        <Button Content="Capture" HorizontalAlignment="Left" Margin="330,228,0,0" VerticalAlignment="Top" Width="80" Height="25" FontSize="16" RenderTransformOrigin="0.535,-1.673" Click="Button_Click_1"/>
+        <Label Content="Subject" HorizontalAlignment="Left" Margin="53,293,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Height="34" Grid.RowSpan="2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="155,0,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1" Height="22"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="53,38,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="34" FontSize="18"/>
+        <DatePicker HorizontalAlignment="Left" Margin="145,43,0,0" Grid.Row="1" VerticalAlignment="Top" Width="140" Height="30" FontSize="14"/>
+        <Button Content="View Attendance" HorizontalAlignment="Left" Margin="145,78,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="32" FontSize="14" Click="Button_Click"/>
+
+    </Grid>
+</Page>
