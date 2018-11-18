@@ -23,12 +23,14 @@ bld/
 [Ll]og/
 
 ##Loading DB Folder
-
+*.saf    <---this is Specific Asset File loading info for specific PC;
+##*.uaf  <---this is Universal Asset File loading info for all/any  PC;
 FolderLoad.cs
 
 
 # Visual Studio 2015 cache/options directory
 .vs/
+.vscode/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 

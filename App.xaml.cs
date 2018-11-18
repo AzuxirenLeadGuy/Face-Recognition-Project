@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace WpfApp2
 {
@@ -15,8 +17,10 @@ namespace WpfApp2
     {
         public App()
         {
-            //FRAttendance.Common.FaceRecognitionConnection = @"C:\Users\Ashish Sam\Documents\FRDB";
-            FRAttendance.Common.Init();
+            string[] x=new string[2];
+            x = JsonConvert.DeserializeObject<string[]>(File.ReadAllText("path.saf"));
+            FRAttendance.Common.Init(x[0]);
+            FRAttendance.AssetLoad.AssetURI = x[1];
         }
     }
 }

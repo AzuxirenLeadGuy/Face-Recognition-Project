@@ -42,6 +42,9 @@
     <Reference Include="FaceRecognitionDotNet, Version=1.2.3.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\FaceRecognitionDotNet-WithCUDA.1.2.3.5\lib\netstandard2.0\FaceRecognitionDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -59,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
+    <Compile Include="AssetLoad.cs" />
     <Compile Include="Attendance.xaml.cs">
       <DependentUpon>Attendance.xaml</DependentUpon>
     </Compile>
@@ -68,7 +72,6 @@
     <Compile Include="First_page.xaml.cs">
       <DependentUpon>First_page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FolderLoad.cs" />
     <Compile Include="FRAttendance.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

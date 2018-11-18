@@ -4,10 +4,10 @@ using System.Linq;
 
 namespace FRAttendance
 {
-    public static partial class Common
+    public static class Common
     {
         public static FaceRecognition fr;
-        public static void Init(){fr=FaceRecognition.Create(FaceRecognitionConnection);}
+        public static void Init(string path){fr=FaceRecognition.Create(path);}
     } 
     public struct Person:IComparable<Person>,IEquatable<Person>
     {
