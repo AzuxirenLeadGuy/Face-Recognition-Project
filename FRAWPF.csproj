@@ -92,20 +92,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Reg_confirm.xaml.cs">
-      <DependentUpon>Reg_confirm.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Report_page.xaml.cs">
       <DependentUpon>Report_page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Student_rer_confirm.xaml.cs">
-      <DependentUpon>Student_rer_confirm.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Subject_reg.xaml.cs">
       <DependentUpon>Subject_reg.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Attendance2.xaml.cs">
-      <DependentUpon>Attendance2.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -147,25 +138,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Reg_confirm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Report_page.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Student_rer_confirm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Subject_reg.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Attendance2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,12 +10,16 @@
 
     <Grid RenderTransformOrigin="0.485,0.479" Background="#FF1623AA">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="0*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="29*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="Image1" HorizontalAlignment="Center" Height="323" VerticalAlignment="Top" Width="635" RenderTransformOrigin="0.492,0.541" Margin="-255,24,420,0"/>
-        <Button Content="Capture" HorizontalAlignment="Left" Margin="249,378,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" RenderTransformOrigin="0.535,-1.673" Click="Button_Click_1"/>
-        <Button Content="Continue" HorizontalAlignment="Left" Margin="428,378,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" Click="Button_Click_2"/>
+        <Image x:Name="Image1" HorizontalAlignment="Center" Height="189" VerticalAlignment="Top" Width="354" RenderTransformOrigin="0.492,0.541" Margin="26,24,420,0"/>
+        <Button Content="Capture" HorizontalAlignment="Left" Margin="330,228,0,0" VerticalAlignment="Top" Width="80" Height="25" FontSize="16" RenderTransformOrigin="0.535,-1.673" Click="Button_Click_1"/>
+        <Label Content="Subject" HorizontalAlignment="Left" Margin="53,293,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Height="34" Grid.RowSpan="2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="155,0,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1" Height="22"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="53,38,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="34" FontSize="18"/>
+        <DatePicker HorizontalAlignment="Left" Margin="145,43,0,0" Grid.Row="1" VerticalAlignment="Top" Width="140" Height="30" FontSize="14"/>
+        <Button Content="View Attendance" HorizontalAlignment="Left" Margin="145,78,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="32" FontSize="14" Click="Button_Click"/>
 
     </Grid>
 </Page>

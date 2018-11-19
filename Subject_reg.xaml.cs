@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,25 +22,6 @@ namespace WpfApp2
         public Subject_reg()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-            OpenFileDialog op = new OpenFileDialog();
-            op.Title = "Select a File";
-            op.Filter = "JSON files|*.uaf"; 
-              
-            if (op.ShowDialog() == true)
-            {
-                File_button.Content = op.FileName;
-                
-            }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new FRAWPF.Reg_confirm());
         }
     }
 }
