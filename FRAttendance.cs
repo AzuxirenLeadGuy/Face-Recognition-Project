@@ -1,7 +1,6 @@
 ﻿using System;
 using FaceRecognitionDotNet;
 using System.Linq;
-
 namespace FRAttendance
 {
     public static class Common
@@ -38,9 +37,19 @@ namespace FRAttendance
             Name=n;
             year=y;
         }
-        public int CompareTo(Subject other)=>Code.CompareTo(other.Code);
-        public bool Equals(Subject other)=>Code.Equals(other.Code);
-        public override int GetHashCode()=>Code.GetHashCode();
+        public Subject(SubjectLoader load)
+        {
+            Code = load.Code;
+            Name = load.Name;
+            year = load.year;
+            var str = load.StudentRolls.Length;
+            Students = new Person[str];
+            for (int i = 0; i < str; i++) { Students[i] = (Person)AssetLoad.PersonLoad(load.StudentRolls[i]); }
+        }
+        public string Roll => Code + year.ToString();
+        public int CompareTo(Subject other)=>Roll.CompareTo(other.Roll);
+        public bool Equals(Subject other)=>Roll.Equals(other.Roll);
+        public override int GetHashCode()=>Roll.GetHashCode();
         public AttendanceReport TakeAttendance(Image img)
         {
             AttendanceReport r=new AttendanceReport(this);
@@ -60,6 +69,23 @@ namespace FRAttendance
             }
             return r;
         }
+    }
+    internal struct SubjectLoader : IEquatable<SubjectLoader>
+    {
+        public string Code, Name;
+        public int year;
+        public string[] StudentRolls;
+        public SubjectLoader(Subject s)
+        {
+            Code = s.Code;
+            year = s.year;
+            Name = s.Name;
+            var st = s.Students.Length;
+            StudentRolls = new string[st];
+            for(int i = 0; i < st; i++) { StudentRolls[i] = s.Students[i].roll; }
+        }
+        public string SubRoll => Code + year.ToString();
+        public bool Equals(SubjectLoader other) => SubRoll.Equals(other.SubRoll);
     }
     internal struct AttendanceReport:IEquatable<AttendanceReport>
     {
