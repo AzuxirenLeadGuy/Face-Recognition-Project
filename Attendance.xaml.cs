@@ -27,14 +27,7 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            FRAttendance.Subject s = new FRAttendance.Subject();
-            var rep = s.TakeAttendance(FaceRecognition.LoadImageFile(pathuri));
-            this.NavigationService.Navigate(new Att_report(rep));
-        }
-
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             OpenFileDialog op = new OpenFileDialog();
@@ -47,6 +40,11 @@ namespace WpfApp2
                 pathuri = op.FileName;
                 Image1.Source = new BitmapImage(new Uri(op.FileName));
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new FRAWPF.Test() );
         }
     }
 }

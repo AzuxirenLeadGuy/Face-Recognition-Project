@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Frame x:Name="main" Content="Frame" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="782" />
+        <Frame x:Name="main" Content="Frame" HorizontalAlignment="Left" Height="559" VerticalAlignment="Top" Width="782" />
 
     </Grid>
 </Window>

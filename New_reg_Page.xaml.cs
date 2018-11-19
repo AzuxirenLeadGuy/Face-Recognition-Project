@@ -20,6 +20,7 @@ namespace WpfApp2
     /// </summary>
     public partial class New_reg_Page : Page
     {
+        string imguri="";
         public New_reg_Page()
         {
             InitializeComponent();
@@ -34,7 +35,28 @@ namespace WpfApp2
               "Portable Network Graphic (*.png)|*.png";
             if (op.ShowDialog() == true)
             {
+                imguri = op.FileName;
                 Image2.Source = new BitmapImage(new Uri(op.FileName));
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            lbl.Content = "Please Wait....";
+            int year;
+            if (imguri != "" && NameBox.Text != ""
+                && int.TryParse(YearBox.Text, out year) &&
+                CourseBox.Text != "" && EnrollBox.Text != "" &&
+                RollBox.Text != "")
+            {
+                FRAttendance.Person p = new FRAttendance.Person(NameBox.Text, RollBox.Text,
+                    CourseBox.Text, YearBox.Text, EnrollBox.Text, FaceRecognitionDotNet.FaceRecognition.LoadImageFile(imguri));
+                FRAttendance.AssetLoad.SavePerson(p);
+                lbl.Content = "Student Registration Complete.";
+            }
+            else
+            {
+                lbl.Content = "Invalid Input! Please provide all details";
             }
         }
     }
