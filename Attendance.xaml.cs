@@ -48,5 +48,10 @@ namespace WpfApp2
                 Image1.Source = new BitmapImage(new Uri(op.FileName));
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new FRAWPF.Test() );
+        }
     }
 }
