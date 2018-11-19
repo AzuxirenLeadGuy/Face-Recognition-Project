@@ -8,20 +8,22 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Subject_reg">
 
-    <Grid>
+    <Grid RenderTransformOrigin="0.533,0.504">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF50DCEA" Offset="0"/>
                 <GradientStop Color="#FF50B9EA" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Course Title" HorizontalAlignment="Left" Margin="81,61,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="16"/>
+        <Label Content="Course Title" HorizontalAlignment="Left" Margin="81,71,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="16"/>
         <Label Content="Course Code" HorizontalAlignment="Left" Margin="81,120,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="16"/>
         <Label Content="Name of Faculty" HorizontalAlignment="Left" Margin="81,177,0,0" VerticalAlignment="Top" Width="150" Height="30" RenderTransformOrigin="0.494,1.921" FontSize="16"/>
         <TextBox HorizontalAlignment="Left" Height="30" Margin="258,73,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" FontSize="16"/>
         <TextBox HorizontalAlignment="Left" Height="30" Margin="258,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" FontSize="16"/>
         <TextBox HorizontalAlignment="Left" Height="30" Margin="258,177,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="258,254,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="16"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="258,294,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="16" Click="Button_Click_1"/>
+        <Button x:Name="File_button" Content="Select" HorizontalAlignment="Left" Margin="256,252,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click" FontSize="14"/>
+        <Label Content="Select Student File" HorizontalAlignment="Left" Margin="81,248,0,0" VerticalAlignment="Top" Width="150" FontSize="16"/>
 
     </Grid>
 </Page>
