@@ -46,26 +46,31 @@ namespace FRAttendance
             FacultyName = load.Fname;
             var str = load.StudentRolls.Length;
             Students = new Person[str];
-            for (int i = 0; i < str; i++) { Students[i] = (Person)AssetLoad.PersonLoad(load.StudentRolls[i]); }
+            for (int i = 0; i < str; i++)
+            {
+                string path = AssetLoad.AssetURI + @"\Students\" + load.StudentRolls[i].ToString() + @".uafp";
+                Students[i] = AssetLoad.PersonLoad(path);
+            }
         }
         public string Roll => Code + year.ToString();
         public int CompareTo(Subject other)=>Roll.CompareTo(other.Roll);
         public bool Equals(Subject other)=>Roll.Equals(other.Roll);
         public override int GetHashCode()=>Roll.GetHashCode();
-        public AttendanceReport TakeAttendance(Image img)
+        public AttendanceReport TakeAttendance(Image img) => TakeAttendance(Common.fr.FaceEncodings(img).ToArray());
+        public AttendanceReport TakeAttendance(FaceEncoding[] faces)
         {
-            AttendanceReport r=new AttendanceReport(this);
-            int j,Slen;
-            r.Date=DateTime.Now;
-            var faces=Common.fr.FaceEncodings(img);
-            Slen=Students.Length;
-            foreach(var face in faces)
+            var r = new AttendanceReport();
+            r.Date = DateTime.Now;
+            r.subject = this;
+            var Slen = Students.Length;
+            r.Present = new bool[Slen];
+            foreach (var face in faces)
             {
-                for(j=0;j<Slen;j++)
+                for (int j = 0; j < Slen; j++)
                 {
-                    if(!r.Present[j])
+                    if (!r.Present[j])
                     {
-                        r.Present[j]=FaceRecognition.CompareFace(Students[j].Face,face);
+                        r.Present[j] = FaceRecognition.CompareFace(Students[j].Face, face);
                     }
                 }
             }

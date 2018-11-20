@@ -34,11 +34,6 @@ namespace WpfApp2
             this.NavigationService.Navigate(new Attendance());
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Report_page());
-        }
-
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Subject_reg());

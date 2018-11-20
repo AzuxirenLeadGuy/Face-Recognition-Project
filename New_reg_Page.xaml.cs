@@ -20,10 +20,11 @@ namespace WpfApp2
     /// </summary>
     public partial class New_reg_Page : Page
     {
-        string imguri="";
+        string imguri;
         public New_reg_Page()
         {
             InitializeComponent();
+            imguri = "";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

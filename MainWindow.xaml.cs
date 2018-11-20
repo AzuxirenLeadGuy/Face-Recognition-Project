@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes; 
+using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
 namespace WpfApp2
 {
     /// <summary>
@@ -22,7 +24,23 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
-            main.NavigationService.Navigate(new First());
+            string[] x = new string[2];
+            try
+            {
+                x = JsonConvert.DeserializeObject<string[]>(File.ReadAllText("path.saf"));
+                FRAttendance.Common.Init(x[0]);
+                FRAttendance.AssetLoad.AssetURI = x[1];
+                main.NavigationService.Navigate(new First());
+            }
+            catch
+            {
+                main.NavigationService.Navigate(new Report_page());
+            }
+        }
+
+        private void Main_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
     }
 }

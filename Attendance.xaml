@@ -20,9 +20,10 @@
             <RowDefinition/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="Image1" HorizontalAlignment="Center" Height="238" VerticalAlignment="Top" Width="472" RenderTransformOrigin="0.492,0.541" Margin="-40,113,366,0" Stretch="None"/>
-        <Button Content="Capture" HorizontalAlignment="Left" Margin="170,459,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" RenderTransformOrigin="0.535,-1.673" Click="Button_Click_1"/>
-        <Button Content="Continue" HorizontalAlignment="Left" Margin="528,459,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" Click="Button_Click_2"/>
+        <Image x:Name="Image1" HorizontalAlignment="Center" Height="238" VerticalAlignment="Top" Width="472" RenderTransformOrigin="0.492,0.541" Margin="-39,40,365,0" Stretch="None"/>
+        <Button Content="Capture" HorizontalAlignment="Left" Margin="144,386,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" RenderTransformOrigin="0.535,-1.673" Click="Button_Click_1"/>
+        <Button Content="Continue" HorizontalAlignment="Left" Margin="533,386,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" Click="Button_Click_2"/>
+        <Label Name="Lbl" Content="" HorizontalAlignment="Left" Margin="209,483,0,0" VerticalAlignment="Top" Height="26" Width="374"/>
 
     </Grid>
 </Page>

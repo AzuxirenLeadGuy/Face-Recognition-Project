@@ -17,6 +17,7 @@
         <Label Content="Unknown" HorizontalAlignment="Left" Margin="512,15,0,0" VerticalAlignment="Top"/>
         <Label Content="Unknown" HorizontalAlignment="Left" Margin="131,17,0,0" VerticalAlignment="Top"/>
         <Label Content="Unknown" HorizontalAlignment="Left" Margin="512,43,0,0" VerticalAlignment="Top"/>
-        <DataGrid HorizontalAlignment="Left" Height="495" Margin="0,95,0,0" VerticalAlignment="Top" Width="800"/>
+        <DataGrid HorizontalAlignment="Left" Height="495" Margin="0,95,0,0" VerticalAlignment="Top" Width="555"/>
+        <TextBox Name="TextBoxReport" HorizontalAlignment="Left" Height="495" Margin="560,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230"/>
     </Grid>
 </Page>

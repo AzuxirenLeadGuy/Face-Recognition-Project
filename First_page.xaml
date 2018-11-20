@@ -9,9 +9,8 @@
       Title="First">
 
     <Grid Background="#FF313EC5">
-        <Button Content="Take Attendance" HorizontalAlignment="Left" Margin="320,67,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="18" Click="Button_Click_1"/>
-        <Button Content="Generate Report" HorizontalAlignment="Left" Margin="320,157,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="18" Click="Button_Click_2"/>
-        <Button Content="New Registration" HorizontalAlignment="Left" Margin="320,249,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="Button_Click" FontSize="18"/>
-        <Button Content="Register subject" HorizontalAlignment="Left" Margin="320,337,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="18" Click="Button_Click_3"/>
+        <Button Content="Take Attendance" HorizontalAlignment="Left" Margin="242,67,0,0" VerticalAlignment="Top" Width="303" Height="50" FontSize="18" Click="Button_Click_1"/>
+        <Button Content="New Student Registration" HorizontalAlignment="Left" Margin="242,215,0,0" VerticalAlignment="Top" Width="303" Height="50" Click="Button_Click" FontSize="18"/>
+        <Button Content="Register subject" HorizontalAlignment="Left" Margin="242,371,0,0" VerticalAlignment="Top" Width="303" Height="50" FontSize="18" Click="Button_Click_3"/>
     </Grid>
 </Page>

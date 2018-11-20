@@ -32,7 +32,7 @@ namespace WpfApp2
             op.Multiselect = true;
             op.Title = "Select a File";
             op.Filter = "JSON files|*.uafp";
-            op.InitialDirectory = FRAttendance.AssetLoad.AssetURI;
+            op.InitialDirectory = FRAttendance.AssetLoad.AssetURI+@"\Students\";
             if (op.ShowDialog() == true)
             {
                 var x=op.FileNames.Length;
@@ -59,7 +59,7 @@ namespace WpfApp2
                 var l = StudentList.Items;
                 loader.StudentRolls = new string[l.Count];
                 year = 0;
-                foreach(string s in l){loader.StudentRolls[year] = s;}
+                foreach(string s in l){loader.StudentRolls[year++] = s;}
                 FRAttendance.AssetLoad.SaveSubject(loader);
                 Lbl.Content = "Subject Data Stored Successfully";
             }

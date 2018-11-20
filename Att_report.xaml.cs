@@ -25,6 +25,7 @@ namespace WpfApp2
         {
             InitializeComponent();
             report =r ;
+            TextBoxReport.Text = report.ToString();
         }
     }
 }

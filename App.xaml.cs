@@ -17,10 +17,6 @@ namespace WpfApp2
     {
         public App()
         {
-            string[] x=new string[2];
-            x = JsonConvert.DeserializeObject<string[]>(File.ReadAllText("path.saf"));
-            FRAttendance.Common.Init(x[0]);
-            FRAttendance.AssetLoad.AssetURI = x[1];
         }
     }
 }

@@ -26,6 +26,7 @@ namespace WpfApp2
         public Attendance()
         {
             InitializeComponent();
+            pathuri = "";
         }
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -39,12 +40,28 @@ namespace WpfApp2
             {
                 pathuri = op.FileName;
                 Image1.Source = new BitmapImage(new Uri(op.FileName));
+                if (FRAWPF.Test.LoadFaces != null && FRAWPF.Test.LoadFaces.IsAlive)
+                {
+                    FRAWPF.Test.LoadFaces.Abort();
+                }
+                FRAWPF.Test.EncodingsLoaded = false;
+                FRAWPF.Test.LoadFaces = new System.Threading.Thread(Load);
+                FRAWPF.Test.LoadFaces.Start();
+            }
+            void Load()
+            {
+                FRAWPF.Test.Faces = FRAttendance.Common.fr.FaceEncodings
+                    (FaceRecognition.LoadImageFile(pathuri)).ToArray();
+                FRAWPF.Test.EncodingsLoaded = true;
             }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new FRAWPF.Test() );
+            if (pathuri != "")
+                this.NavigationService.Navigate(new FRAWPF.Test());
+            else
+                Lbl.Content = "Please Load a photo for attendance";
         }
     }
 }

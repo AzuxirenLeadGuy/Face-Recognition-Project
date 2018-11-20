@@ -12,7 +12,7 @@
         <Label Content="Subject" HorizontalAlignment="Left" Margin="83,55,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="18" RenderTransformOrigin="0.395,1.247"/>
         <Label Content="Date" HorizontalAlignment="Left" Margin="486,49,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="18"/>
         <DatePicker HorizontalAlignment="Left" Margin="591,48,0,0" VerticalAlignment="Top" Width="120" Height="30"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="356,460,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="16" Click="Button_Click"/>
+        <Button Name="SubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="340,430,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="16" Click="Button_Click" IsEnabled="False"/>
         <Button x:Name="Attend_button" Content="Load File" HorizontalAlignment="Left" Margin="183,58,0,0" VerticalAlignment="Top" Width="194" Click="Button_Click_1"/>
 
     </Grid>
