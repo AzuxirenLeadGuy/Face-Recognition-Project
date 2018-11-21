@@ -60,5 +60,12 @@ namespace WpfApp2
                 lbl.Content = "Invalid Input! Please provide all details";
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new First());
+        }
+
+        
     }
 }

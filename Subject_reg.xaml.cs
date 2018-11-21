@@ -79,5 +79,10 @@ namespace WpfApp2
         {
             if (StudentList.SelectedIndex != -1) { RemoveSelect.IsEnabled = true; }
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new First());
+        }
     }
 }

@@ -27,5 +27,10 @@ namespace WpfApp2
             report =r ;
             TextBoxReport.Text = report.ToString();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

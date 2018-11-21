@@ -22,8 +22,11 @@
         <Label Content="Year" HorizontalAlignment="Left" Margin="421,322,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="14"/>
         <TextBox Name="CourseBox" HorizontalAlignment="Left" Height="25" Margin="532,287,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="YearBox" HorizontalAlignment="Left" Height="25" Margin="532,326,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="339,393,0,0" VerticalAlignment="Top" Width="90" Height="30" FontSize="14" Click="Button_Click_1"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="407,421,0,0" VerticalAlignment="Top" Width="90" Height="30" FontSize="14" Click="Button_Click_1"/>
         <Label Name="lbl" Content="" HorizontalAlignment="Left" Margin="272,504,0,0" VerticalAlignment="Top" Width="316"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="252,421,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="Button_Click_2">
+            
+        </Button>
 
     </Grid>
 </Page>

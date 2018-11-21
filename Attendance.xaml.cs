@@ -63,5 +63,10 @@ namespace WpfApp2
             else
                 Lbl.Content = "Please Load a photo for attendance";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new First());
+        }
     }
 }
