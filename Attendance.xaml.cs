@@ -40,6 +40,7 @@ namespace WpfApp2
             {
                 pathuri = op.FileName;
                 Image1.Source = new BitmapImage(new Uri(op.FileName));
+                Image1.Stretch = Stretch.Fill;
                 if (FRAWPF.Test.LoadFaces != null && FRAWPF.Test.LoadFaces.IsAlive)
                 {
                     FRAWPF.Test.LoadFaces.Abort();
