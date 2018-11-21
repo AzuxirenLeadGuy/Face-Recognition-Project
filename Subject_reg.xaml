@@ -22,13 +22,14 @@
         <TextBox Name="CCodeBox" HorizontalAlignment="Left" Height="30" Margin="214,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" FontSize="16"/>
         <TextBox Name="FBox" HorizontalAlignment="Left" Height="30" Margin="214,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" FontSize="16"/>
         <TextBox Name="YBox" HorizontalAlignment="Left" Height="29" Margin="214,231,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" FontSize="16"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="360,454,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="16" Click="Button_Click_1"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="425,454,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="16" Click="Button_Click_1"/>
         <Button x:Name="File_button" Content="Select" HorizontalAlignment="Left" Margin="276,320,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click" FontSize="14"/>
         <Label Content="Select Student File" HorizontalAlignment="Left" Margin="81,312,0,0" VerticalAlignment="Top" Width="150" FontSize="16"/>
         <ListBox Name="StudentList" HorizontalAlignment="Left" Height="272" Margin="477,71,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="StudentList_SelectionChanged"/>
         <Button Name="RemoveSelect" IsEnabled="False" Content="Remove Selected" HorizontalAlignment="Left" Margin="542,374,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click_2" />
         <Label Name="Lbl" Content="" HorizontalAlignment="Left" Margin="140,399,0,0" VerticalAlignment="Top" Width="534"/>
         <Label Content="Year" HorizontalAlignment="Left" Margin="86,229,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.447,0.192" FontSize="16"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="214,454,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Button_Click_3"/>
 
     </Grid>
 </Page>

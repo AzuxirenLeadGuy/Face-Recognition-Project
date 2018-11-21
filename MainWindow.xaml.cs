@@ -27,6 +27,7 @@ namespace WpfApp2
             string[] x = new string[2];
             try
             {
+               
                 x = JsonConvert.DeserializeObject<string[]>(File.ReadAllText("path.saf"));
                 FRAttendance.Common.Init(x[0]);
                 FRAttendance.AssetLoad.AssetURI = x[1];

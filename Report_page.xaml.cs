@@ -16,6 +16,7 @@ using FRAttendance;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System.IO;
+using System.Windows.Forms;
 namespace WpfApp2
 {
     /// <summary>
@@ -30,22 +31,27 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string[] x = new string[2];
-            var of=new OpenFileDialog();
-            of.Title = "Select the Directory for Face Database";
-            of.Filter = "Directory |";
-            if(of.ShowDialog() == true)
+            string[] path = new string[2];
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
-
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                path[0] = dialog.SelectedPath;
             }
-            of = new OpenFileDialog();
-            of.Title = "Select the Directory for File Storage";
-            of.Filter = "Directory |";
-            if (of.ShowDialog() == true)
+
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
-
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                path[1] = dialog.SelectedPath;
+                path_test.Text = path[1];
+                
             }
-            File.WriteAllText("path.saf", JsonConvert.SerializeObject(x));
+
+            //File.WriteAllText("path.saf", JsonConvert.SerializeObject(x));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
