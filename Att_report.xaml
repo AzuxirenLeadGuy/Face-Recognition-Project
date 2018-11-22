@@ -27,6 +27,6 @@
         <Button Content="Exit" HorizontalAlignment="Left" Margin="619,410,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Height="37" FontSize="18"/>
         <Button Content="Main Menu" HorizontalAlignment="Left" Margin="619,275,0,0" VerticalAlignment="Top" Width="140" Height="37" FontSize="18" Click="Button_Click_1"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="619,347,0,0" VerticalAlignment="Top" Width="140" Height="37" FontSize="16" Click="Button_Click_2"/>
-        <Button Content="Generate Report" FontSize="17" HorizontalAlignment="Left" Margin="619,206,0,0" VerticalAlignment="Top" Width="139" Height="43" Click="Button_Click_3"/>
+        <Button x:Name="Report_button" Content="Generate Report" FontSize="17" HorizontalAlignment="Left" Margin="619,206,0,0" VerticalAlignment="Top" Width="139" Height="43" Click="Button_Click_3"/>
     </Grid>
 </Page>

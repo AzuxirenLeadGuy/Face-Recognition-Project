@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FRAttendance;
 using Newtonsoft.Json;
-using Excel = Microsoft.Office.Interop.Excel;
+using GemBox.Spreadsheet;
 
 namespace WpfApp2
 {
@@ -26,10 +26,11 @@ namespace WpfApp2
     {
         AttendanceReport report;
         ObservableCollection<Test> col;
+
         internal Att_report(AttendanceReport r)
         {
             InitializeComponent();
-            report =r ;
+            report = r;
             Subject s = (Subject)(r.subject);
             LSubject.Content = s.Name;
             LCourseCode.Content = s.Code;
@@ -85,39 +86,55 @@ namespace WpfApp2
                 System.IO.File.WriteAllText(path,text);
             }*/
             Export_Excel(report.ConvertToList());
+            Report_button.Content = "Report Generated";
         }
+
+        /* public void Export_Excel(IEnumerable<Data_Diaplay> Info)
+         {
+             Workbook workbook = new Workbook();
+             Worksheet sheet = workbook.Worksheets[0];
+             sheet.Name = "Attendance";
+             sheet.Range["A1"].Text = "Roll NO";
+             sheet.Range["B1"].Text = "Name";
+             sheet.Range["C1"].Text = "Present";
+             int i = 2;
+             foreach(var data in Info)
+             {
+                 i++;
+                 sheet.Range[("A" + i)].Text = data.roll_no;
+                 sheet.Range[("B" + i)].Text = data.name;
+                 sheet.Range[("C" + i)].Text = data.present;
+             }
+             DateTime time = DateTime.Now;
+
+             workbook.SaveToFile("report.xls");
+             System.Diagnostics.Process.Start("report.xls");
+         }*/
 
         public void Export_Excel(IEnumerable<Data_Diaplay> Info)
         {
-                var excelApp = new Excel.Application();
-                // Make the object visible.
-                excelApp.Visible = true;
+            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+            ExcelFile myExcelFile = new ExcelFile();
+            ExcelWorksheet excWsheet = myExcelFile.Worksheets.Add("Hajan's worksheet");
 
-                // Create a new, empty workbook and add it to the collection returned 
-                // by property Workbooks. The new workbook becomes the active workbook.
-                // Add has an optional parameter for specifying a praticular template. 
-                // Because no argument is sent in this example, Add creates a new workbook. 
-                excelApp.Workbooks.Add();
+            excWsheet.Columns[0].Width = 10 * 256;
+            excWsheet.Columns[1].Width = 30 * 256;
+            excWsheet.Columns[2].Width = 10 * 256;
 
-                // This example uses a single workSheet. The explicit type casting is
-                // removed in a later procedure.
-                Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
-            
-            workSheet.Cells[1, "A"] = "Roll No";
-            workSheet.Cells[1, "B"] = "Name";
-            workSheet.Cells[1, "C"] = "Present";
+            excWsheet.Rows[2].Cells[0].Value = "Roll No";
+            excWsheet.Rows[2].Cells[1].Value = "Name";
+            excWsheet.Rows[2].Cells[2].Value = "Attendance";
 
-            var row = 1;
-            foreach (var acct in Info)
+            int count = 4;
+            foreach (var data in Info)
             {
-                row++;
-                workSheet.Cells[row, "A"] = acct.roll_no;
-                workSheet.Cells[row, "B"] = acct.name;
-                workSheet.Cells[row, "C"] = acct.present;
+                excWsheet.Rows[count].Cells[0].Value = data.roll_no;
+                excWsheet.Rows[count].Cells[1].Value = data.name;
+                excWsheet.Rows[count].Cells[2].Value = data.present;
+                count++;
+
             }
-            workSheet.Columns[1].AutoFit();
-            workSheet.Columns[2].AutoFit();
-            workSheet.Columns[3].AutoFit();
+            myExcelFile.Save(@"C:\etc\Myfile");
         }
     }
 
