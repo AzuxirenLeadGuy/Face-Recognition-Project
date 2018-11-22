@@ -17,8 +17,13 @@
         <Label Content="Unknown" HorizontalAlignment="Left" Margin="512,15,0,0" VerticalAlignment="Top"/>
         <Label Content="Unknown" HorizontalAlignment="Left" Margin="131,17,0,0" VerticalAlignment="Top"/>
         <Label Content="Unknown" HorizontalAlignment="Left" Margin="512,43,0,0" VerticalAlignment="Top"/>
-        <DataGrid HorizontalAlignment="Left" Height="495" Margin="0,95,0,0" VerticalAlignment="Top" Width="555"/>
-        <TextBox Name="TextBoxReport" HorizontalAlignment="Left" Height="495" Margin="560,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="623,542,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <DataGrid AutoGenerateColumns="False" Name="Data_Grid" CanUserAddRows="True" ItemsSource="{Binding TestBinding}" Margin="0,159,204,36" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Roll NO"  Binding="{Binding Path=Test1}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name"   Binding="{Binding Path=Test2}" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Header="Present"   Binding="{Binding Path=Test3}" Width="100"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="619,410,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Height="37" FontSize="18"/>
     </Grid>
 </Page>

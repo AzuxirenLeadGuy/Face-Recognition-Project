@@ -118,5 +118,23 @@ namespace FRAttendance
             }
             return output;
         }
+        public System.Collections.Generic.List<Data_Diaplay> ConvertToList()
+        {
+            System.Collections.Generic.List<Data_Diaplay> list = new System.Collections.Generic.List<Data_Diaplay>();
+            Subject s = (Subject)subject;
+            String att;
+            for (int i=0;i<Present.Length;i++)
+            {
+                att = Present[i] == true ? "Present" : "Absent";
+                list.Add((new Data_Diaplay { roll_no=s.Students[i].roll,name= s.Students[i].name,present= att } ));
+            }
+            return list;
+        }
+    }
+    public class Data_Diaplay
+    {
+        internal string roll_no { get; set; }
+        internal string name { get; set; }
+        internal string present { get; set; }
     }
 }
