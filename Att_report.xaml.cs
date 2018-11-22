@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using FRAttendance;
 using Newtonsoft.Json;
 using GemBox.Spreadsheet;
-
+using Microsoft.Win32;
 namespace WpfApp2
 {
     /// <summary>
@@ -102,7 +102,14 @@ namespace WpfApp2
                 count++;
 
             }
-            myExcelFile.Save(@"C:\etc\"+Sub+" "+Date+" .xls");
+            var op = new SaveFileDialog();
+            op.Title = "Select a Location to save Spreadsheet report";
+            op.Filter = "Spreadsheet files|*.xls";;
+            op.DefaultExt = "xls";
+            if (op.ShowDialog() == true)
+            {
+                myExcelFile.Save(op.FileName);
+            }
         }
     }
 
