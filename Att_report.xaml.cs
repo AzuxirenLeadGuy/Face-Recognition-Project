@@ -64,5 +64,15 @@ namespace WpfApp2
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new First());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new FRAWPF.Test());
+        }
     }
 }
