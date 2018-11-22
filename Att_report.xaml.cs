@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FRAttendance;
 using Newtonsoft.Json;
+using Excel = Microsoft.Office.Interop.Excel;
+
 namespace WpfApp2
 {
     /// <summary>
@@ -66,7 +68,7 @@ namespace WpfApp2
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            var res = col.ToArray();
+           /* var res = col.ToArray();
             for (int i = 0; i < res.Length; i++){report.Present[i] = res[i].Test3;}
             var text = report.ToString(); Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
             dlg.FileName = ((Subject)report.subject).Code; // Default file name
@@ -81,7 +83,41 @@ namespace WpfApp2
                 // Save document
                 string path = dlg.FileName;
                 System.IO.File.WriteAllText(path,text);
+            }*/
+            Export_Excel(report.ConvertToList());
+        }
+
+        public void Export_Excel(IEnumerable<Data_Diaplay> Info)
+        {
+                var excelApp = new Excel.Application();
+                // Make the object visible.
+                excelApp.Visible = true;
+
+                // Create a new, empty workbook and add it to the collection returned 
+                // by property Workbooks. The new workbook becomes the active workbook.
+                // Add has an optional parameter for specifying a praticular template. 
+                // Because no argument is sent in this example, Add creates a new workbook. 
+                excelApp.Workbooks.Add();
+
+                // This example uses a single workSheet. The explicit type casting is
+                // removed in a later procedure.
+                Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
+            
+            workSheet.Cells[1, "A"] = "Roll No";
+            workSheet.Cells[1, "B"] = "Name";
+            workSheet.Cells[1, "C"] = "Present";
+
+            var row = 1;
+            foreach (var acct in Info)
+            {
+                row++;
+                workSheet.Cells[row, "A"] = acct.roll_no;
+                workSheet.Cells[row, "B"] = acct.name;
+                workSheet.Cells[row, "C"] = acct.present;
             }
+            workSheet.Columns[1].AutoFit();
+            workSheet.Columns[2].AutoFit();
+            workSheet.Columns[3].AutoFit();
         }
     }
 

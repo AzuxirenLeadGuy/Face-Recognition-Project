@@ -1,0 +1,24 @@
+Code	FT02
+
+Date	22-11-2018 10:14:43
+
+Class Strength	9
+
+F0001	Cesar Azpellicueta	Absent
+
+F0002	Gary Cahill	Absent
+
+F0003	Cesc Fabregas	Absent
+
+F0004	Eden Hazard	Absent
+
+F0005	John Terry	Present
+
+F0006	David Luiz	Absent
+
+F0007	Frank Lampard	Present
+
+F0008	Neymar	Absent
+
+F0009	Fernando Torres	Absent
+
