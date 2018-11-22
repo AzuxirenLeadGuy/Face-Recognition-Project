@@ -78,6 +78,7 @@ namespace WpfApp2
         private void StudentList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (StudentList.SelectedIndex != -1) { RemoveSelect.IsEnabled = true; }
+            else { RemoveSelect.IsEnabled = false; }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Collections.ObjectModel;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input; 
@@ -22,47 +23,35 @@ namespace WpfApp2
     public partial class Att_report : Page
     {
         AttendanceReport report;
+        ObservableCollection<Test> col;
         internal Att_report(AttendanceReport r)
         {
             InitializeComponent();
             report =r ;
-            //TextBoxReport.Text = report.ToString();
-            /*DataGridTextColumn d = new DataGridTextColumn();
-            Binding b = new Binding("Roll no");
-            d.Binding = b;
-            d.Header = "Roll no";
-            Data_Grid.Columns.Add(d);
-           // Data_Grid.ItemsSource = report.ConvertToList();
-            
-            foreach(var k in report.ConvertToList())
-            {
-                var data = k;
-                Data_Grid.Items.Add(k);
-            }*/
-
+            Subject s = (Subject)(r.subject);
+            LSubject.Content = s.Name;
+            LCourseCode.Content = s.Code;
+            LFacultyName.Content = s.FacultyName;
+            LDate.Content = r.Date.ToLongDateString();
+            col = new ObservableCollection<Test>();
             foreach (var k in report.ConvertToList())
             {
-                var data = new Test { Test1 = k.roll_no, Test2 = k.name ,Test3 = k.present };
-                Data_Grid.Items.Add(data);
+                var data = new Test { Test1 = k.roll_no, Test2 = k.name ,Test3=k.present=="Present" };
+                col.Add(data);
             }
-
+            Data_Grid.ItemsSource = col;
         }
 
         public class Test
         {
             public string Test1 { get; set; }
             public string Test2 { get; set; }
-            public string Test3 { get; set; }
+            public bool Test3 { get; set; }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -74,5 +63,26 @@ namespace WpfApp2
         {
             this.NavigationService.Navigate(new FRAWPF.Test());
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var res = col.ToArray();
+            for (int i = 0; i < res.Length; i++){report.Present[i] = res[i].Test3;}
+            var text = report.ToString(); Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = ((Subject)report.subject).Code; // Default file name
+            dlg.DefaultExt = ".txt"; // Default file extension
+            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+
+            // Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+            // Process save file dialog box results
+            if (result == true)
+            {
+                // Save document
+                string path = dlg.FileName;
+                System.IO.File.WriteAllText(path,text);
+            }
+        }
     }
+
 }

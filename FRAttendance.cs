@@ -110,11 +110,11 @@ namespace FRAttendance
         public override string ToString()
         {
             int l=Present.Length;
-            string output=$"Code\t{((Subject)subject).Code}\nDate\t{Date}\nClass Strength\t{l}\n";
+            string output=$"Code\t{((Subject)subject).Code}\n\nDate\t{Date}\n\nClass Strength\t{l}\n\n";
             for(int i=0;i<l;i++)
             {
                 output+=$"{((Subject)subject).Students[i].roll}\t{((Subject)subject).Students[i].name}\t";
-                output+=Present[i]?"Present\n":"Absent\n";
+                output+=Present[i]?"Present\n\n":"Absent\n\n";
             }
             return output;
         }

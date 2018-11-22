@@ -13,19 +13,20 @@
         <Label Content="Subject" HorizontalAlignment="Left" Margin="49,51,0,0" VerticalAlignment="Top"/>
         <Label Content="Course Code" HorizontalAlignment="Left" Margin="415,15,0,0" VerticalAlignment="Top"/>
         <Label Content="Date" HorizontalAlignment="Left" Margin="415,43,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unknown" HorizontalAlignment="Left" Margin="131,51,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unknown" HorizontalAlignment="Left" Margin="512,15,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unknown" HorizontalAlignment="Left" Margin="131,17,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unknown" HorizontalAlignment="Left" Margin="512,43,0,0" VerticalAlignment="Top"/>
-        <DataGrid AutoGenerateColumns="False" Name="Data_Grid" CanUserAddRows="True" ItemsSource="{Binding TestBinding}" Margin="0,159,204,36" >
+        <Label Name="LSubject" Content="" HorizontalAlignment="Left" Margin="131,51,0,0" VerticalAlignment="Top"/>
+        <Label Name="LCourseCode"  Content="" HorizontalAlignment="Left" Margin="512,15,0,0" VerticalAlignment="Top"/>
+        <Label Name="LFacultyName" Content="" HorizontalAlignment="Left" Margin="131,17,0,0" VerticalAlignment="Top"/>
+        <Label Name="LDate" Content="" HorizontalAlignment="Left" Margin="512,43,0,0" VerticalAlignment="Top"/>
+        <DataGrid AutoGenerateColumns="False" Name="Data_Grid" CanUserAddRows="True" ItemsSource="{Binding TestBinding}" Margin="0,159,204,36">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Roll NO"  Binding="{Binding Path=Test1}" Width="100"></DataGridTextColumn>
                 <DataGridTextColumn Header="Name"   Binding="{Binding Path=Test2}" Width="200"></DataGridTextColumn>
-                <DataGridTextColumn Header="Present"   Binding="{Binding Path=Test3}" Width="100"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Present" Binding="{Binding Path=Test3}" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Exit" HorizontalAlignment="Left" Margin="619,410,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Height="37" FontSize="18"/>
         <Button Content="Main Menu" HorizontalAlignment="Left" Margin="619,275,0,0" VerticalAlignment="Top" Width="140" Height="37" FontSize="18" Click="Button_Click_1"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="619,347,0,0" VerticalAlignment="Top" Width="140" Height="37" FontSize="16" Click="Button_Click_2"/>
+        <Button Content="Generate Report" FontSize="17" HorizontalAlignment="Left" Margin="619,206,0,0" VerticalAlignment="Top" Width="139" Height="43" Click="Button_Click_3"/>
     </Grid>
 </Page>

@@ -20,7 +20,7 @@
             <RowDefinition/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="Image1" RenderTransformOrigin="0,0" HorizontalAlignment="Center" Height="262" VerticalAlignment="Top"  ClipToBounds="True" Margin="209,59,276,0" Stretch="Uniform" Width="313"/>
+        <Image x:Name="Image1" RenderTransformOrigin="0,0" HorizontalAlignment="Center" Height="262" VerticalAlignment="Top"  ClipToBounds="True" Margin="209,59,276,0" Stretch="Fill" Width="313"/>
         <Button Content="Capture" HorizontalAlignment="Left" Margin="345,386,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" RenderTransformOrigin="0.535,-1.673" Click="Button_Click_1"/>
         <Button Content="Continue" HorizontalAlignment="Left" Margin="533,386,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" Click="Button_Click_2"/>
         <Label Name="Lbl" Content="" HorizontalAlignment="Left" Margin="209,483,0,0" VerticalAlignment="Top" Height="26" Width="374"/>

@@ -51,6 +51,12 @@ namespace WpfApp2
             try
             {
                 Common.Init(x[0]);
+                var sp = x[1] + @"\Students";
+                if(!Directory.Exists(sp))
+                    Directory.CreateDirectory(sp);
+                sp = x[1] + @"\SubjectLoad";
+                if(!Directory.Exists(sp))
+                    Directory.CreateDirectory(sp);
                 AssetLoad.AssetURI = x[1];
                 File.WriteAllText("path.saf", JsonConvert.SerializeObject(x));
                 this.NavigationService.Navigate(new First());
