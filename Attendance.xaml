@@ -7,7 +7,7 @@
       mc:Ignorable="d" d:DesignWidth="800"
       Title="Attendance" Height="600">
 
-    <Grid RenderTransformOrigin="0.485,0.479" Background="#FF1623AA" Margin="-1,0,3,0">
+    <Grid RenderTransformOrigin="0.485,0.479" Margin="-1,0,3,0" Background="#FF268989">
         <Grid.RenderTransform>
             <TransformGroup>
                 <ScaleTransform/>
@@ -20,8 +20,8 @@
             <RowDefinition/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="Image1" RenderTransformOrigin="0,0" HorizontalAlignment="Center" Height="262" VerticalAlignment="Top"  ClipToBounds="True" Margin="209,59,276,0" Stretch="Fill" Width="313"/>
-        <Button Content="Capture" HorizontalAlignment="Left" Margin="345,386,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" RenderTransformOrigin="0.535,-1.673" Click="Button_Click_1"/>
+        <Image x:Name="Image1" RenderTransformOrigin="0,0" HorizontalAlignment="Center" Height="262" VerticalAlignment="Top"  ClipToBounds="True" Margin="209,59,276,0" Stretch="Fill" Width="313" OpacityMask="Black"/>
+        <Button Content="Select Image" HorizontalAlignment="Left" Margin="345,386,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" RenderTransformOrigin="0.535,-1.673" Click="Button_Click_1"/>
         <Button Content="Continue" HorizontalAlignment="Left" Margin="533,386,0,0" VerticalAlignment="Top" Width="118" Height="41" FontSize="16" Click="Button_Click_2"/>
         <Label Name="Lbl" Content="" HorizontalAlignment="Left" Margin="209,483,0,0" VerticalAlignment="Top" Height="26" Width="374"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="161,384,0,0" VerticalAlignment="Top" Width="118" Height="43" FontSize="16" Click="Button_Click"/>

@@ -24,13 +24,14 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
-            string[] x = new string[2];
+            string[] x;
             try
             {
                
                 x = JsonConvert.DeserializeObject<string[]>(File.ReadAllText("path.saf"));
                 FRAttendance.Common.Init(x[0]);
                 FRAttendance.AssetLoad.AssetURI = x[1];
+                Report_page.xcl_path = x[2];
                 main.NavigationService.Navigate(new First());
             }
             catch

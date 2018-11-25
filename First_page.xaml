@@ -8,7 +8,19 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="First">
 
-    <Grid Background="#FF313EC5">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF07355B"/>
+                <GradientStop Color="#FF0AF0F0" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.OpacityMask>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.OpacityMask>
         <Button Content="Take Attendance" HorizontalAlignment="Left" Margin="242,67,0,0" VerticalAlignment="Top" Width="303" Height="50" FontSize="18" Click="Button_Click_1"/>
         <Button Content="New Student Registration" HorizontalAlignment="Left" Margin="242,215,0,0" VerticalAlignment="Top" Width="303" Height="50" Click="Button_Click" FontSize="18"/>
         <Button Content="Register subject" HorizontalAlignment="Left" Margin="242,371,0,0" VerticalAlignment="Top" Width="303" Height="50" FontSize="18" Click="Button_Click_3"/>

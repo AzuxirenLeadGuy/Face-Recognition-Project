@@ -73,8 +73,6 @@ namespace WpfApp2
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             Export_Excel(report.ConvertToList());
-            Report_button.Content = "Report Generated";
-            Report_button.IsEnabled = false;
         }
 
         
@@ -102,14 +100,28 @@ namespace WpfApp2
                 count++;
 
             }
-            var op = new SaveFileDialog();
-            op.Title = "Select a Location to save Spreadsheet report";
-            op.Filter = "Spreadsheet files|*.xls";;
-            op.DefaultExt = "xls";
-            if (op.ShowDialog() == true)
+            if (Report_page.xcl_path.Length > 1 && Report_page.xcl_path!="NAN")
             {
-                myExcelFile.Save(op.FileName);
+                myExcelFile.Save(Report_page.xcl_path+"\\"+Sub+" "+Date+". xls");
+                Report_button.IsEnabled = false;
             }
+            else
+            {
+                var op = new SaveFileDialog();
+                op.Title = "Select a Location to save Spreadsheet report";
+                op.Filter = "Spreadsheet files|*.xls"; ;
+                op.DefaultExt = "xls";
+                if (op.ShowDialog() == true)
+                {
+                    myExcelFile.Save(op.FileName);
+                }
+                if (op.FileName.Length > 1)
+                {
+                    Report_button.Content = op.FileName;
+                    Report_button.IsEnabled = false;
+                }
+            }
+            
         }
     }
 

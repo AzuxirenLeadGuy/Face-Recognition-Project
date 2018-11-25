@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="New_reg_Page">
 
-    <Grid>
+    <Grid Background="#FF268989">
         <Image x:Name="Image2" HorizontalAlignment="Left" Height="193" Margin="564,10,0,0" VerticalAlignment="Top" Width="191"/>
         <Button Content="Capture" HorizontalAlignment="Left" Height="38" Margin="622,222,0,0" VerticalAlignment="Top" Width="92" FontSize="18" Click="Button_Click"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="40,280,0,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="14"/>

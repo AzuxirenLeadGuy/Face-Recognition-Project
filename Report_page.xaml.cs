@@ -24,6 +24,7 @@ namespace WpfApp2
     /// </summary>
     public partial class Report_page : Page
     {
+        internal string[] x=new string[3];
         internal Report_page()
         {
             InitializeComponent();
@@ -31,7 +32,6 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string[] x= new string[2];
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 dialog.Description = "Please Select Folder for the downloaded Face DB";
@@ -59,7 +59,7 @@ namespace WpfApp2
                     Directory.CreateDirectory(sp);
                 AssetLoad.AssetURI = x[1];
                 File.WriteAllText("path.saf", JsonConvert.SerializeObject(x));
-                this.NavigationService.Navigate(new First());
+                
             }
             catch
             {
@@ -71,6 +71,21 @@ namespace WpfApp2
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                dialog.Description = "Please Select Folder for the downloaded Face DB";
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                x[2] = dialog.SelectedPath;
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new First());
         }
     }
 }
