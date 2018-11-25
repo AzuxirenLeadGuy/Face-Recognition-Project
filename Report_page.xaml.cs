@@ -24,48 +24,21 @@ namespace WpfApp2
     /// </summary>
     public partial class Report_page : Page
     {
-        internal string[] x=new string[3];
+        internal static string xcl_path;
         internal Report_page()
         {
             InitializeComponent();
         }
-
+        internal string[] x=new string[2];
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
-            {
-                dialog.Description = "Please Select Folder for the downloaded Face DB";
-                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-                x[0] = dialog.SelectedPath;
-                path_test.Text = x[0];
-            }
-
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 dialog.Description = "Please Select Folder for the Stored Student Files";
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
                 x[1] = dialog.SelectedPath;
                 path_test.Text = x[1];
-
             }
-            try
-            {
-                Common.Init(x[0]);
-                var sp = x[1] + @"\Students";
-                if(!Directory.Exists(sp))
-                    Directory.CreateDirectory(sp);
-                sp = x[1] + @"\SubjectLoad";
-                if(!Directory.Exists(sp))
-                    Directory.CreateDirectory(sp);
-                AssetLoad.AssetURI = x[1];
-                File.WriteAllText("path.saf", JsonConvert.SerializeObject(x));
-                
-            }
-            catch
-            {
-                path_test.Text = "Invalid Folder!!. Please Try again!";
-            }
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -77,15 +50,31 @@ namespace WpfApp2
         {
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
-                dialog.Description = "Please Select Folder for the downloaded Face DB";
+                dialog.Description = "Please Select Folder for the default Report location.";
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-                x[2] = dialog.SelectedPath;
+                x[0] = dialog.SelectedPath;
+                path_test.Text = x[0];
             }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new First());
+            try
+            {
+                Common.Init(@".\");
+                var sp = x[1] + @"\Students";
+                if (!Directory.Exists(sp))
+                    Directory.CreateDirectory(sp);
+                sp = x[1] + @"\SubjectLoad";
+                if (!Directory.Exists(sp))
+                    Directory.CreateDirectory(sp);
+                AssetLoad.AssetURI = x[1];
+                this.NavigationService.Navigate(new First());
+                Report_page.xcl_path = x[0];
+                File.WriteAllText("path.saf", JsonConvert.SerializeObject(x));
+                this.NavigationService.Navigate(new First());
+            }
+            catch { path_test.Text = "Invalid Folder!!. Please Try again!"; }
         }
     }
 }

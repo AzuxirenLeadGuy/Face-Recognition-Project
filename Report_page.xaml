@@ -10,11 +10,11 @@
 
     <Grid>
         <Label Content="Please Set up the Directory for Face Database and Storage" HorizontalAlignment="Left" Margin="192,51,0,0" VerticalAlignment="Top" Width="426" Height="30" FontSize="16"/>
-        <Button Content="Setup" HorizontalAlignment="Left" Margin="192,405,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="543,405,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Student Folder" HorizontalAlignment="Left" Margin="166,405,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="543,405,0,0" VerticalAlignment="Top" Width="105" Click="Button_Click_1"/>
         <TextBlock x:Name="path_test" HorizontalAlignment="Left" Margin="338,180,0,0" TextWrapping="Wrap" Text="No Folder specified yet." VerticalAlignment="Top" Height="80" Width="232"/>
-        <Button Content="Edit Target" HorizontalAlignment="Left" Margin="361,405,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <Button Content="Continue" HorizontalAlignment="Left" Margin="398,461,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="Report Target" HorizontalAlignment="Left" Margin="338,405,0,0" VerticalAlignment="Top" Width="125" Click="Button_Click_2"/>
+        <Button Content="Continue" HorizontalAlignment="Left" Margin="338,460,0,0" VerticalAlignment="Top" Width="125" Click="Button_Click_3"/>
 
     </Grid>
 </Page>

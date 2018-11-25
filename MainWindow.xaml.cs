@@ -27,11 +27,10 @@ namespace WpfApp2
             string[] x;
             try
             {
-               
                 x = JsonConvert.DeserializeObject<string[]>(File.ReadAllText("path.saf"));
-                FRAttendance.Common.Init(x[0]);
+                FRAttendance.Common.Init(@".\");
                 FRAttendance.AssetLoad.AssetURI = x[1];
-                Report_page.xcl_path = x[2];
+                Report_page.xcl_path = x[0];
                 main.NavigationService.Navigate(new First());
             }
             catch

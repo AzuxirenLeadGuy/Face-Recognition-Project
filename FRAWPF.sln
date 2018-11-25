@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FRAWPF", "FRAWPF.csproj", "{EEF021DD-60C1-496E-9143-33398E5BA6E9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{10FFFE56-29F3-465E-A113-E4894C76F915}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\FRDB\dlib_face_recognition_resnet_model_v1.dat = ..\..\..\Documents\FRDB\dlib_face_recognition_resnet_model_v1.dat
+		..\..\..\Documents\FRDB\mmod_human_face_detector.dat = ..\..\..\Documents\FRDB\mmod_human_face_detector.dat
+		..\..\..\Documents\FRDB\shape_predictor_5_face_landmarks.dat = ..\..\..\Documents\FRDB\shape_predictor_5_face_landmarks.dat
+		..\..\..\Documents\FRDB\shape_predictor_68_face_landmarks.dat = ..\..\..\Documents\FRDB\shape_predictor_68_face_landmarks.dat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

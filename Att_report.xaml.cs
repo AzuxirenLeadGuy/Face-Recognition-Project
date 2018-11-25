@@ -102,7 +102,7 @@ namespace WpfApp2
             }
             if (Report_page.xcl_path.Length > 1 && Report_page.xcl_path!="NAN")
             {
-                myExcelFile.Save(Report_page.xcl_path+"\\"+Sub+" "+Date+". xls");
+                myExcelFile.Save(Report_page.xcl_path+"\\"+Sub+" "+Date+".xls");
                 Report_button.IsEnabled = false;
             }
             else
